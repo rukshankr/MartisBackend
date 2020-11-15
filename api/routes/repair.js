@@ -33,7 +33,7 @@ router.patch('/changeComments', (req, res) => {
     .catch(err => console.log(err));
 })
 
-router.post('/addRepair', (req, res) => {
+router.put('/addRepair', (req, res) => {
     let engineerId = req.body.engineerId;
     let assetId = req.body.assetId;
     let repairDate = req.body.repairDate;

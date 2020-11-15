@@ -23,12 +23,12 @@ class Dbservice{
         }
     }
 
-    async changeComments(engineerID, assetID, repairDate, comments){
+    async changeComments(engineerId, assetId, repairDate, comment){
         try{
             const response = await new Promise((resolve, reject) => {
-                const query = "UPDATE repair SET Comments = ? WHERE AssetID = ? AND EngineeerID = ? AND RepairDate = ?";
+                const query = "UPDATE repair SET Comment = ? WHERE AssetID = ? AND EngineerID = ? AND RepairDate = ?";
 
-                connection.query(query, [comments, assetID, engineerID,  repairDate], (err, results) => {
+                connection.query(query, [comment, assetId, engineerId,  repairDate], (err, results) => {
                     if(err) reject(err.message);
                     resolve("Comment changed");
                 })
